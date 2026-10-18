@@ -19,10 +19,10 @@ download of this folder to the end.
 
 ## Before lab sheet 1
 
-You need these tools on your own computer:
+You tools are need on your own computer:
 
 | Tool | Version | How to check |
-|---|---|---|
+| --- | --- | --- |
 | Git | 2.30 or later | `git --version` |
 | Python | **3.11 or later** (3.12 is best: the pipeline and the container use it) | `python3.12 --version` |
 | `venv` support | Debian and Ubuntu install it separately: `sudo apt install python3.12-venv` | `python3.12 -m venv /tmp/t` |
@@ -92,7 +92,7 @@ Kubernetes manifest and no Argo CD application**. You write them. Each lab
 sheet adds some of them to this same repository:
 
 | Lab sheet | Course chapters | What you add |
-|---|---|---|
+| --- | --- | --- |
 | 1 | 1 | the public repository, with a merge, a bisect and a revert in its history; branch protection on `main` |
 | 2 | 2 | `.github/workflows/ci.yml` (lint, tests with coverage, secret scan, dependency audit), as a required check; `docs/TP2_diagnosis.md` |
 | 3 | 3 | `Dockerfile` (multi-stage, not root), `.dockerignore`, and an `image` job that pushes to `ghcr.io` |
@@ -189,7 +189,7 @@ Each variable, its default value, and the first lab sheet that needs it. See
 also `.env.example`.
 
 | Variable | Default | First used in |
-|---|---|---|
+| --- | --- | --- |
 | `DATABASE_URL` | `sqlite:///./data/scoreboard.db` | 4 (`sqlite:////data/scoreboard.db`, then a broken path in Part C) |
 | `CHALLENGES_FILE` | `data/challenges.yaml` | optional (a ConfigMap can replace the file) |
 | `ADMIN_TOKEN` | *not set*: admin endpoints return 503 | 3 (`-e ADMIN_TOKEN`), 4 (Secret) |
@@ -217,7 +217,7 @@ that runs but is not ready, with `No module named 'psycopg'` in the log.
 ## The API
 
 | | | |
-|---|---|---|
+| --- | --- | --- |
 | `GET` | `/` | service banner |
 | `GET` | `/healthz` | liveness |
 | `GET` | `/readyz` | readiness; 503 when the database is not reachable |
@@ -303,7 +303,7 @@ also lists the tools for each lab sheet. Read the line of a lab sheet
 ### Problems and solutions
 
 | What you see | Cause and solution |
-|---|---|
+| --- | --- |
 | `make install`: *No Python 3.11+ found* | Install `python3.12`. On Ubuntu 22.04, it comes from the deadsnakes PPA. Or use the course virtual machine. |
 | `ensurepip is not available` | Debian or Ubuntu: `sudo apt install python3.12-venv` |
 | `pip install --user ...`: *externally-managed-environment* | Debian 12 and Ubuntu 23.04+ refuse pip for the whole system. Use `pipx install <tool>`, or install inside `.venv`. |
