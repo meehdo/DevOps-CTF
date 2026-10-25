@@ -82,7 +82,7 @@ def points_for(spec: ChallengeSpec, solve_count: int) -> int:
     if spec.decay_solves < 1:
         raise ValueError(f"{spec.slug}: decay_solves must be at least 1")
 
-    if n >= spec.decay_solves:
+    if n - 1 >= spec.decay_solves:
         return spec.min_points
 
     span = spec.base_points - spec.min_points
@@ -119,6 +119,8 @@ def average_score(totals: list[int]) -> float:
     reason the function exists rather than being written inline: the
     scoreboard is requested before anybody has registered, every single time.
     """
+    if not totals:
+        return 0.0
     return sum(totals) / len(totals)
 
 
