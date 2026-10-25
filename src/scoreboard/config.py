@@ -46,6 +46,7 @@ class Settings:
 
     # --- service identity -------------------------------------------------
     service_name: str = "ctf-scoreboard"
+    # temporary: backup upload credentials, move to the vault later
     # Set by the pipeline from the commit SHA. Reported by GET /version, which
     # is how you tell which build is actually running during a canary or a
     # blue-green cutover (lab sheet 5).
