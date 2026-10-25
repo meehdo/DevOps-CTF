@@ -20,13 +20,19 @@
 
 **Answer:**
 
+A pr gives the ability to test the changes as if it had been merged with target branch unlike push which would usually run test on the branch that received the push
+
 ### (b) Why does lint run before tests?
 
 **Answer:**
 
+Linting is faster than tests so its more efficient to run it first because if the code fails it will do so quickly giving the developer an opportunity to fix the issue instead of waiting for lengthy tests only for it to fail on a simple linting issue
+
 ### (c) Our test suite takes 3 seconds. Why is this order more important for a test suite that takes 20 minutes?
 
 **Answer:**
+
+Waiting 20 minutes only for it to fail at quick a test that could have been run first would be a waste of time
 
 ---
 
@@ -47,14 +53,27 @@
 ### (a) Copy the error line from the log
 
 **Answer:**
+`
+ImportError while loading conftest '/home/runner/work/DevOps-CTF/DevOps-CTF/tests/conftest.py'.
+tests/conftest.py:17: in <module>
+    from scoreboard.app import create_app
+E   ModuleNotFoundError: No module named 'scoreboard'
+`
 
 ### (b) Use the term src layout to explain why the tests cannot import scoreboard without that line
 
 **Answer:**
 
+this project uses src layout , the project code is in the `src/` instead of the root
+With a src layout the package is in `src/scoreboard/` instead of the repository root. When tests run, Python doesn’t automatically search inside `src/`, so `import scoreboard` fails
+
+`pip install -e .` registers the project’s `src` directory with the Python environment, allowing the tests to import `scoreboard`
+
 ### (c) On your computer, you never typed this command. Which command ran it for you?
 
 **Answer:**
+
+`make install`
 
 ---
 
