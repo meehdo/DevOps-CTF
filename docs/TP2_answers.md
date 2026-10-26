@@ -42,9 +42,13 @@ Waiting 20 minutes only for it to fail at quick a test that could have been run 
 
 **Answer:**
 
+`git commit --no-verify`
+
 ### (b) Now the pipeline scans every change for secrets. Who can still put a secret on main, a secret that the pipeline detects?
 
 **Answer:**
+
+A repository administrator or a user with "Bypass branch protection" permissions can push directly to main or merge a pull request even if the pipeline detects it and it fails the checks.
 
 ---
 
@@ -94,6 +98,10 @@ With a src layout the package is in `src/scoreboard/` instead of the repository 
 
 **Answer:**
 
+The vulnerable package is a direct dependency
+
 ### (b) How did you find out? Give the command
 
 **Answer:**
+
+`cat requirements.txt`
