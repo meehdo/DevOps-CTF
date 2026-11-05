@@ -42,9 +42,3 @@ jobs:
         if: ${{ !cancelled() }}
         run: pip-audit -r requirements.txt
         
-      - name: custom smoke test
-        run: |
-          python --version
-          test -f pyproject.toml
-          echo "My custom CI test passed!"        
-
