@@ -33,7 +33,7 @@ Linting is faster than tests so its more efficient to run it first because if th
 **Answer:**
 
 Waiting 20 minutes only for it to fail at quick a test that could have been run first would be a waste of time
-![](screenshots/partA.png)
+![](screenshots/TP2/partA.png)
 ---
 
 # Exercise 2
@@ -79,7 +79,7 @@ With a src layout the package is in `src/scoreboard/` instead of the repository 
 
 `make install`
 
-![](screenshots/partC.png)
+![](screenshots/TP2/partC.png)
 ---
 
 # Exercise 4
@@ -91,7 +91,7 @@ With a src layout the package is in `src/scoreboard/` instead of the repository 
 | Credential | secret scan | `gitleaks` | Found 2 leaks | Detection |
 | Dependency | dependency audit | `pip-audit` | `pyyaml 5.3.1` has known vulnerabilities | Detection |
 
-![](screenshots/partD.png)
+![](screenshots/TP2/partD.png)
 ---
 
 # Exercise 5
@@ -108,7 +108,7 @@ The vulnerable package is a direct dependency
 
 `cat requirements.txt`
 
-![](screenshots/partD2.png)
+![](screenshots/TP2/partD2.png)
 
 Note: the original lab was done on the previous week without taking screenshots
 the screeenshots provided were redone at a later occasion on different branches
