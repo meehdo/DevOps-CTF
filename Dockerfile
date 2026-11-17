@@ -18,4 +18,5 @@ ENV PATH="/opt/venv/bin:$PATH" PYTHONUNBUFFERED=1 \
 PYTHONDONTWRITEBYTECODE=1 BUILD_SHA=${BUILD_SHA}
 USER 10001
 EXPOSE 8000
+
 CMD ["uvicorn", "--factory", "scoreboard.app:get_app","--host", "0.0.0.0", "--port", "8000"]

@@ -8,3 +8,4 @@ data/*.db
 .env
 docs/
 tests/
+.DS_Store
