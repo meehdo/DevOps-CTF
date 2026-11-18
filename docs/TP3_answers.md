@@ -160,4 +160,4 @@ It makes the results reproducible between runs and avoids breaking the pipeline 
 
 If both images used the latest tag then they would overwrite each other
 
-![](screenshots/TP3/partD1.png)
+![](screenshots/TP3/partE1.png)
